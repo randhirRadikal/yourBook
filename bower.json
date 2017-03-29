@@ -1,0 +1,24 @@
+{
+  "name": "yourBook",
+  "description": "social networking sit",
+  "main": "",
+  "authors": [
+    "Randhir Jha"
+  ],
+  "license": "BRS",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "^1.6.3",
+    "angular-route": "^1.6.3",
+    "angularfire": "^2.3.0"
+  }
+}
