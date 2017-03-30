@@ -1,0 +1,52 @@
+<style>
+.cropArea {
+  background: #E4E4E4;
+  overflow: hidden;
+  width:200px;
+  height:200px;
+}
+</style>
+<div class="row">
+  <h1>Home</h1>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img ngf-thumbnail="picFile" class="thumb" ng-show="picFile">
+      <img src="images/icons/no-images.jpg" class="thumb" ng-hide="picFile">
+      <div class="caption">
+        <p>
+          <a href="javascript:void(0);" class="btn btn-primary"
+                type="file" ngf-select ng-model="picFile" name="file"
+                accept="image/*" ngf-max-size="2MB" required
+                ngf-model-invalid="errorFile" ng-hide="picFile">
+                Upload
+          </a>
+          <button type="button" ng-click="picFile = null" class="btn btn-default"
+                  ng-show="picFile">Remove</button>
+          <button class="btn btn-success"
+                  ng-click="uploadProfilePic(picFile)" ng-show="picFile" >Submit</button>
+        </p>
+        {{allMessage}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row" ng-repeat="user in users">
+  {{user}}
+  <div class="col-sm-10">
+    <div class="thumbnail">
+      <img ng-src="" alt="">
+      <div class="caption">
+        <h3>{{user.username}}</h3>
+        <p>...</p>
+        <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
+      </div>
+    </div>
+  </div>
+</div>
+{{msg}}
+
+{{users}}
