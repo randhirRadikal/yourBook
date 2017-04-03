@@ -7,7 +7,8 @@ app.controller("loginCtrl", function ($scope,$timeout) {
       .then(function(res){
         $timeout(function () {
           $scope.isButtonBusy = false;
-          $scope.userId = res.uid;
+          localStorage.setItem('yourBook_Uid', res.uid);
+          window.location.href = '#!/';
         },0);
       })
       .catch(function(err) {

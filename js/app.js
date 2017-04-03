@@ -33,7 +33,14 @@ app.run(function($rootScope,authService){
 
     $rootScope.$on("$locationChangeStart", function(event, next, current) {
       authService.onAuthStateChanged(function(res){
-        console.log(res);
+        if(res.error){
+          localStorage.removeItem('yourBook_Username');
+          localStorage.removeItem('yourBook_Email');
+          localStorage.removeItem('yourBook_Uid');
+          //window.location.href = '#!/login';
+        }else{
+          window.location.href = '#!/';
+        }
       });
     });
 });
