@@ -18,6 +18,10 @@ app.config(function($routeProvider) {
     .when("/login", {
         templateUrl : "./views/login.html",
         controller : "loginCtrl"
+    })
+    .when("/chat/:userId",{
+        templateUrl : "./views/chat.html",
+        controller : "chatPopupCtrl"
     });
 });
 app.run(function($rootScope,authService){
